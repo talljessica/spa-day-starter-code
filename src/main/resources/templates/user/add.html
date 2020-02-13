@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+    <body>
+        <h1>Register as a Spa Member</h1>
+
+    <form method = "post" action="/user/add" th:object="${user}">
+        <p><label>Username:<input type="text" name="username"/></label><br />
+            <label>Email:<input type="email" name="email"/></label><br />
+            <label>Password:<input type="password" name="password"/></label><br />
+            <label>Verify password:<input type="password" name = "verifyPW" /></label></p>
+        <p th:text="${error}"></p>
+        <input type="submit" value="Register">
+    </form>
+    </body>
+</html>
